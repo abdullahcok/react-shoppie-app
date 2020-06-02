@@ -29,12 +29,13 @@ class Directory extends React.Component{
       {
         title: 'WOMENs',
         imageUrl: 'https://images.pexels.com/photos/3752928/pexels-photo-3752928.jpeg',
+        id: 4,
         size: 'large',
         linkUrl: ''
       },
       {
         title: 'MENs',
-        imageUrl: 'https://images.pexels.com/photos/3778069/pexels-photo-3778069.jpeg',
+        imageUrl: 'https://images.pexels.com/photos/2224699/pexels-photo-2224699.jpeg',
         size: 'large',
         id: 5,
         linkUrl: ''
@@ -51,7 +52,7 @@ class Directory extends React.Component{
           ))
         }
       </div>
-    )
+    );
   }
 }
 
