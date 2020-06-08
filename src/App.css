@@ -4,3 +4,8 @@ body{
   -moz-osx-font-smoothing: grayscale;
   padding: 20px 80px;
 }
+
+a{
+  text-decoration: none;
+  color: #111;
+}
