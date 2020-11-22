@@ -1,18 +1,19 @@
 import React from 'react'
 import './Header.scss'
 import {Link} from 'react-router-dom'
-import Logo from '../../Assets/Logo.svg'
+import Logo from '../../Assets/logo.png'
 
 const Header = () => (
   <div className="header">
-    <img src={Logo} alt="logo" />
-
-    <div className="options">
-      <Link className="option" to="/about">ABOUT US</Link>
-      <Link className="option" to="/shop">SHOP</Link>
-      <Link className="option" to="/contact">CONTACT</Link>
-      <Link className="option" to="/signin">SIGN IN</Link>
-    </div>
+     <Link className='logo-container1' to='/'>    
+        <img src={Logo} alt="logo" class='logo'/>
+      </Link>
+      <div className="options">
+        <Link className="option" to="/about">ABOUT US</Link>
+        <Link className="option" to="/shop">SHOP</Link>
+        <Link className="option" to="/contact">CONTACT</Link>
+        <Link className="option" to="/signin">SIGN IN</Link>
+      </div>
   </div>
 )
 
