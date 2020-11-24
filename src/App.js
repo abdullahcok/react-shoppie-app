@@ -7,19 +7,43 @@ import ShopPage from './Pages/ShopPage/ShopPage.jsx';
 import Header from './Components/Header/Header.jsx';
 import SignIUPage from './Pages/SignIU/SignIUPage.jsx';
 
+import {auth} from './Firebase/FirebaseUtils'
 
+class App extends React.Component{
+    constructor(){
+        super();
 
-function App() {
-  return (
-      <div>
-        <Header/>
-        <Switch>
-          <Route exact path='/' component={HomePage}/>
-          <Route path='/shop' component={ShopPage}/>
-          <Route path='/signin' component={SignIUPage}/>
-        </Switch>
-      </div>
-  );
+        this.state = {
+            currentUser: null
+        }
+    }
+
+    unsubscribeFromAuth = null
+
+    componentDidMount(){
+        this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+            this.setState({currentUser: user})
+
+            // console.log(user);
+        })
+    }
+
+    componentWillUnmount(){
+      this.unsubscribeFromAuth()
+    }
+
+    render() {
+      return (
+          <div>
+            <Header currentUser = {this.state.currentUser}/>
+            <Switch>
+              <Route exact path='/' component={HomePage}/>
+              <Route path='/shop' component={ShopPage}/>
+              <Route path='/signin' component={SignIUPage}/>
+            </Switch>
+          </div>
+      );
+    }
 }
 
 export default App;
