@@ -5,12 +5,11 @@ import Logo from '../../Assets/Logo.svg'
 import {auth} from '../../Firebase/FirebaseUtils'
 
 import {Link} from 'react-router-dom'
-import {connect} from 'react-redux'
 
 const Header = ({currentUser}) => (
   <div className="header">
      <Link className='logo-container' to='/'>
-        <img src={Logo} alt="logo" class='logo'/>
+        <img src={Logo} alt="logo" className='logo'/>
       </Link>
       <div className="options">
         <Link className="option" to="/shop">SHOP</Link>
@@ -33,8 +32,5 @@ const Header = ({currentUser}) => (
   </div>
 )
 
-const mapStateToProps = state => ({
-      currentUser: state.user.currentUser
-})
 
-export default connect()(Header)
+export default Header
