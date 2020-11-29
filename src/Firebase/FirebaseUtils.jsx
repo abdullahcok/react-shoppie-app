@@ -3,21 +3,20 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 const config =  {
-    apiKey: "AIzaSyB6ieiiFFHlQARCUS6tAoIkN_62xsjCoZM",
-    authDomain: "bikie-db.firebaseapp.com",
-    databaseURL: "https://bikie-db.firebaseio.com",
-    projectId: "bikie-db",
-    storageBucket: "bikie-db.appspot.com",
-    messagingSenderId: "617206266774",
-    appId: "1:617206266774:web:7cf0efe205f91367247bb7",
-    measurementId: "G-NWRZ78D7P9"
+      apiKey: 'AIzaSyCdHT-AYHXjF7wOrfAchX4PIm3cSj5tn14',
+    authDomain: 'crwn-db.firebaseapp.com',
+    databaseURL: 'https://crwn-db.firebaseio.com',
+    projectId: 'crwn-db',
+    storageBucket: 'crwn-db.appspot.com',
+    messagingSenderId: '850995411664',
+    appId: '1:850995411664:web:7ddc01d597846f65',
   };
 
 
   export const createUserProfileDocument = async(userAuth, additionalData) => {
       if(!userAuth) return
 
-      const userRef = firestore.doc(`users/${userAuth.uid}`)
+      const userRef = firestore.doc(`/users/${userAuth.uid}`)
       const snapShot = await userRef.get();
 
       if(snapShot.exists){
