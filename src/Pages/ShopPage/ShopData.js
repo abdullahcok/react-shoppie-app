@@ -32,7 +32,7 @@
   },
 
   {
-    id: 1,
+    id: 2,
     title: 'Scooters',
     routeName: 'skooters',
     items: [
@@ -64,7 +64,7 @@
   },
 
   {
-    id: 1,
+    id: 3,
     title: 'Skates',
     routeName: 'Skates',
     items: [
@@ -96,7 +96,7 @@
   },
 
   {
-    id: 1,
+    id: 4,
     title: 'Womens',
     routeName: 'womens',
     items: [
@@ -128,7 +128,7 @@
   },
 
   {
-    id: 1,
+    id: 5,
     title: 'Mens',
     routeName: 'mens',
     items: [

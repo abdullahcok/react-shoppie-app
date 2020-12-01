@@ -1,18 +1,18 @@
 .cart-dd{
   position: absolute;
-  width: 240px;
+  width: 280px;
   height: 340px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 0px;
   border: 1px solid #000;
   background: #fff;
   top: 90px;
-  right: 190px;
+  right: 90px;
   z-index: 5;
 
   .cart-items{
-    height: 340px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     overflow: scroll;

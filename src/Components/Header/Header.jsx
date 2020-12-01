@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.scss'
 import Logo from '../../Assets/Logo.svg'
 
-import CartItem from '../CartItem/CartItem'
+import CartIcon from '../CartIcon/CartIcon'
 import CartDropDown from '../Cart/CartDropDown'
 
 import {auth} from '../../Firebase/FirebaseUtils'
@@ -29,7 +29,7 @@ const Header = ({currentUser, hidden}) => (
           )
         }
 
-        <CartItem />
+        <CartIcon />
       </div>
 
           {
