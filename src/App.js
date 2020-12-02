@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
 
@@ -8,6 +8,7 @@ import HomePage from './Pages/HomePage/HomePage.jsx';
 import ShopPage from './Pages/ShopPage/ShopPage.jsx';
 import Header from './Components/Header/Header.jsx';
 import SignIUPage from './Pages/SignIU/SignIUPage.jsx';
+import CheckOutPage from './Pages/CheckOutPage/CheckOutPage.jsx'
 
 
 import {auth, createUserProfileDocument} from './Firebase/FirebaseUtils'
@@ -55,7 +56,13 @@ class App extends React.Component{
             <Switch>
               <Route exact path='/' component={HomePage}/>
               <Route path='/shop' component={ShopPage}/>
-              <Route path='/signin' component={SignIUPage}/>
+              <Route exact path='/checkout' component={CheckOutPage}/>
+              <Route exact path='/signin'
+                            render = {() => this.props.currentUser
+                                                  ? ( <Redirect to = '/' />  )
+                                                  : (  <SignIUPage />  )
+                                              }
+                  />
             </Switch>
           </div>
       );
