@@ -34,7 +34,7 @@ const SHOP_DATA = [
   {
     id: 2,
     title: 'Scooters',
-    routeName: 'skooters',
+    routeName: 'scooters',
     items: [
       {
         id: 5,
