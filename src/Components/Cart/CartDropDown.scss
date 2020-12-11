@@ -1,29 +1,29 @@
-.cart-dd{
+.cart-dd {
   position: absolute;
   width: 280px;
   height: 340px;
   display: flex;
   flex-direction: column;
-  padding: 0px;
-  border: 1px solid #000;
-  background: #fff;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: white;
   top: 90px;
-  right: 90px;
+  right: 40px;
   z-index: 5;
 
-  .empty-message{
-    font-size: 14px;
+  .empty-message {
+    font-size: 18px;
     margin: 50px auto;
   }
 
-  .cart-items{
-    height: 400px;
+  .cart-items {
+    height: 240px;
     display: flex;
     flex-direction: column;
     overflow: scroll;
   }
 
-  button{
+  button {
     margin-top: auto;
   }
 }

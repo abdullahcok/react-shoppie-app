@@ -13,7 +13,7 @@
     cursor:pointer;
 
     & .background-image{
-      transform: scale(1.5);
+      transform: scale(1.2);
       transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
@@ -23,14 +23,14 @@
   }
 
   &.large{
-    height: 300px;
+    height: 380px;
   }
 
   &:first-child{
-    margin-right: 2.5px;
+    margin-right: 7.5px;
   }
   &:last-child{
-    margin-left: 2.5px;
+    margin-left: 7.5px;
   }
 
   .background-image{
@@ -41,10 +41,10 @@
   }
 
   .content{
-    border: 0.5px solid #111;
-    background: linear-gradient(rgba(200,200,200,0.6),rgba(200,200,200,0.3));
+    border: 0.3px solid #434343;
+    background: linear-gradient(rgba(200,200,200,0.5),rgba(200,200,200,0.3));
     height: 90px;
-    padding: 0 20px;
+    padding: 0 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,8 +54,14 @@
 
     .title{
       font-weight: bold;
-      width: 100%;
-      margin: 0 6px 0;
+      font-size: 22px;
+      margin: 0 1px 0;
+      color: #2f2f2f;
+    }
+
+    .subtitle{
+      font-weight: lighter;
+      font-size: 16px;
     }
   }
 
