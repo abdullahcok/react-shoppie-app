@@ -1,6 +1,6 @@
 import React from 'react'
 import './Header.scss'
-import Logo from '../../Assets/Logo.svg'
+import Logo from '../../Assets/Logo.png'
 
 import {auth} from '../../Firebase/FirebaseUtils'
 import CartIcon from '../CartIcon/CartIcon'
