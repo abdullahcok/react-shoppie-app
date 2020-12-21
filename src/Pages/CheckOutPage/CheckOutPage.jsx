@@ -1,5 +1,4 @@
 import React from 'react'
-import './CheckOutPage.scss'
 
 import {connect} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
@@ -7,45 +6,47 @@ import {createStructuredSelector} from 'reselect'
 import {selectCartItems, selectCartTotal} from '../../Redux/cart/cart-selectors'
 
 import CheckOutItem from '../../Components/CheckOutItem/CheckOutItem.jsx'
-import StripeCheckoutButton from '../../Components/Stripe/StripeButton.jsx'
+import StripeCheckOutButton from '../../Components/Stripe/StripeButton.jsx'
+
+import {
+  CheckOutPageContainer,
+  CheckOutHeaderContainer,
+  HeaderBlockContainer,
+  TotalContainer,
+  WarningContainer
+} from './CheckOutPage.Styles';
 
 
-const CheckOutPage = ({cartItems, total}) => (
-    <div className='checkout-page'>
-      <div className='checkout-header'>
-              <div className='header-block'>
-                    <span>Product</span>
-              </div>
-              <div className='header-block'>
-                    <span>Description</span>
-              </div>
-              <div className='header-block'>
-                    <span>Quantity</span>
-              </div>
-              <div className='header-block'>
-                    <span>Price</span>
-              </div>
-              <div className='header-block'>
-                    <span>Remove</span>
-              </div>
-
-      </div>
-
-      {
-        cartItems.map(cartItem => (
-            <CheckOutItem key={cartItem.id} cartItem={cartItem} />
-        ))
-      }
-
-      <div className='total'><span>TOTAL: ${total} </span></div>
-      <div className="test-warning">
-        Please use the following test credit card for payments*
-        <br />
-        4242424242424242 - Exp: 01/21 - CVV: 012
-      </div>
-      <StripeCheckoutButton price={total} />
-
-    </div>
+const CheckOutPage = ({ cartItems, total }) => (
+  <CheckOutPageContainer>
+    <CheckOutHeaderContainer>
+      <HeaderBlockContainer>
+        <span>Product</span>
+      </HeaderBlockContainer>
+      <HeaderBlockContainer>
+        <span>Description</span>
+      </HeaderBlockContainer>
+      <HeaderBlockContainer>
+        <span>Quantity</span>
+      </HeaderBlockContainer>
+      <HeaderBlockContainer>
+        <span>Price</span>
+      </HeaderBlockContainer>
+      <HeaderBlockContainer>
+        <span>Remove</span>
+      </HeaderBlockContainer>
+    </CheckOutHeaderContainer>
+    {cartItems.map(cartItem => (
+      <CheckOutItem key={cartItem.id} cartItem={cartItem} />
+    ))}
+    <TotalContainer>TOTAL: ${total}</TotalContainer>
+    <WarningContainer>
+      *Please use the following test credit card for payments*
+      <br />
+      4242 4242 4242 4242 - Exp: 01/20 - CVV: 123
+    </WarningContainer>
+    <StripeCheckOutButton price={total} />
+  </CheckOutPageContainer>
 )
 
 const mapStateToProps = createStructuredSelector({

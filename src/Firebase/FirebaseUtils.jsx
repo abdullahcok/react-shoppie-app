@@ -1,15 +1,16 @@
 import firebase from 'firebase/app'
+import 'firebase/database'
 import 'firebase/firestore'
 import 'firebase/auth'
 
 const config =  {
-      apiKey: 'AIzaSyCdHT-AYHXjF7wOrfAchX4PIm3cSj5tn14',
-    authDomain: 'crwn-db.firebaseapp.com',
-    databaseURL: 'https://crwn-db.firebaseio.com',
-    projectId: 'crwn-db',
-    storageBucket: 'crwn-db.appspot.com',
-    messagingSenderId: '850995411664',
-    appId: '1:850995411664:web:7ddc01d597846f65',
+      apiKey: "AIzaSyBOAVlVr6Yod9IasgH_fJiOjm9i7pzWjHI",
+      authDomain: "ab-pedal.firebaseapp.com",
+      projectId: "ab-pedal",
+      storageBucket: "ab-pedal.appspot.com",
+      messagingSenderId: "509192216150",
+      appId: "1:509192216150:web:ad2bc3a258e58494ce25f7",
+      measurementId: "G-GCZGLCWD4F"
   };
 
 
@@ -17,7 +18,11 @@ const config =  {
       if(!userAuth) return
 
       const userRef = firestore.doc(`/users/${userAuth.uid}`)
+      const collectionRef = firestore.collection('users');
+
       const snapShot = await userRef.get();
+      const collectionSnapshot = await collectionRef.get()
+      console.log({collection: collectionSnapshot.docs.map(doc => doc.data()) });
 
       if(snapShot.exists){
           const{displayName, email} = userAuth
@@ -43,6 +48,7 @@ firebase.initializeApp(config)
 
 export const auth = firebase.auth()
 export const firestore = firebase.firestore()
+export const database = firebase.database()
 
 const provider = new firebase.auth.GoogleAuthProvider()
 provider.setCustomParameters({promp: 'select_account'})

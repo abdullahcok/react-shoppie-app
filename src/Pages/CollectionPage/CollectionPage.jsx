@@ -1,25 +1,27 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import './CollectionPage.scss'
 import CollectionItem from '../../Components/CollectionItem/CollectionItem'
 
 import {selectCollection} from '../../Redux/Shop/ShopSelectors'
 
+import {
+  CollectionPageContainer,
+  CollectionTitle,
+  CollectionItemsContainer
+} from './CollectionPage.Styles';
+
 const CollectionPage = ({ collection }) => {
   const { title, items } = collection
   return (
-    <div className='collection-page'>
-      <h4 className='title'>{title}</h4>
-      <div className='items'>
-          {
-            items.map(item => (
-            <CollectionItem key={item.id} item={item} />
-            )
-          )
-        }
-      </div>
-    </div>
+    <CollectionPageContainer>
+      <CollectionTitle>{title}</CollectionTitle>
+      <CollectionItemsContainer>
+        {items.map(item => (
+          <CollectionItem key={item.id} item={item} />
+        ))}
+      </CollectionItemsContainer>
+    </CollectionPageContainer>
   )
 }
 

@@ -7,8 +7,8 @@ import {createStructuredSelector} from 'reselect'
 import HomePage from './Pages/HomePage/HomePage.jsx';
 import ShopPage from './Pages/ShopPage/ShopPage.jsx';
 import Header from './Components/Header/Header.jsx';
-import SignIUPage from './Pages/SignIU/SignIUPage.jsx';
-import CheckOutPage from './Pages/CheckOutPage/CheckOutPage.jsx'
+import SignIUPage from './Pages/SignUIPage/SignUIPage.jsx';
+import CheckOutPage from './Pages/CheckOutPage/CheckOutPage.jsx';
 
 
 import {auth, createUserProfileDocument} from './Firebase/FirebaseUtils'
