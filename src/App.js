@@ -12,18 +12,12 @@ import CheckOutPage from './Pages/CheckOutPage/CheckOutPage.jsx';
 
 
 import {auth, createUserProfileDocument} from './Firebase/FirebaseUtils'
+
 import {setCurrentUser} from './Redux/User/user-actions'
-import { selectCurrentUser } from './Redux/User/user-selector'
+import {selectCurrentUser} from './Redux/User/user-selector'
 
 
 class App extends React.Component{
-    constructor(){
-        super();
-
-        this.state = {
-            currentUser: null
-        }
-    }
 
     unsubscribeFromAuth = null
 
@@ -42,6 +36,7 @@ class App extends React.Component{
                     })
             }
             setCurrentUser({userAuth})
+            
         })
     }
 

@@ -3,7 +3,7 @@ import React from 'react';
 import FormInput from '../FormInput/FormInput.jsx'
 import CustomButton from '../CustomButton/CustomButton.jsx'
 
-import {auth, signInWithGoogle} from '../../Firebase/FirebaseUtils.jsx'
+import {auth, signInWithGoogle} from '../../Firebase/FirebaseUtils.js'
 
 import {
   SignInContainer,

@@ -3,7 +3,7 @@ import React from 'react';
 import FormInput from '../FormInput/FormInput.jsx'
 import CustomButton from '../CustomButton/CustomButton.jsx'
 
-import {auth, createUserProfileDocument} from '../../Firebase/FirebaseUtils.jsx'
+import {auth, createUserProfileDocument} from '../../Firebase/FirebaseUtils.js'
 
 import { SignUpContainer, SignUpTitle } from './SignUp.Styles';
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ReactComponent as Logo } from '../../Assets/Logo.svg'
+// import { ReactComponent as Logo } from '../../Assets/Logo.png'
 
 import {auth} from '../../Firebase/FirebaseUtils'
 import CartIcon from '../CartIcon/CartIcon'
@@ -21,7 +21,7 @@ import {
 const Header = ({ currentUser, hidden }) => (
   <HeaderContainer>
     <LogoContainer to='/'>
-      <Logo className='logo' />
+      logo.
     </LogoContainer>
     <OptionsContainer>
       <OptionLink to='/shop'>SHOP</OptionLink>
